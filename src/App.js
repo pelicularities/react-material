@@ -7,6 +7,7 @@ import {
   CardContent,
   CardActions,
   Container,
+  Typography,
 } from "@material-ui/core";
 import { makeStyles } from "@material-ui/core/styles";
 
@@ -23,8 +24,14 @@ const useStyles = makeStyles({
     backgroundColor: "yellow",
     color: "black",
   },
-  margin: {
+  marginRight: {
     marginRight: "1rem",
+  },
+  marginTop: {
+    marginTop: "1rem",
+  },
+  maxWidth: {
+    maxWidth: 300,
   },
 });
 
@@ -34,32 +41,35 @@ function App() {
     <Container>
       <Button
         variant="contained"
-        className={`${classes.green} ${classes.margin}`}
+        className={`${classes.green} ${classes.marginRight}`}
       >
         Hello World
       </Button>
       <Button
         variant="contained"
-        className={`${classes.blue} ${classes.margin}`}
+        className={`${classes.blue} ${classes.marginRight}`}
       >
         Hello World
       </Button>
-      <Button
-        variant="contained"
-        className={`${classes.yellow} ${classes.margin}`}
-      >
+      <Button variant="contained" className={`${classes.yellow}`}>
         Hello World
       </Button>
-      <Box width={300}>
-        <Card>
-          <CardHeader title="CardHeader" />
-          <CardContent>
-            CardContent: can you set card width without a Box wrapped around it?
-            hmm
-          </CardContent>
-          <CardActions>CardActions What does this do?</CardActions>
-        </Card>
-      </Box>
+
+      <Card className={`${classes.maxWidth} ${classes.marginTop}`}>
+        <CardHeader title="CardHeader" />
+        <CardContent>
+          CardContent: can you set card width without a Box wrapped around it?
+          hmm
+          <Typography variant="body2">Yes you can, using makeStyles</Typography>
+          <Typography variant="button" gutterBottom>
+            How do you use this Typography tag
+          </Typography>
+          <Typography variant="h4">
+            How do you use this Typography tag
+          </Typography>
+        </CardContent>
+        <CardActions>CardActions What does this do?</CardActions>
+      </Card>
     </Container>
   );
 }
