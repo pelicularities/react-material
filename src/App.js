@@ -3,18 +3,46 @@ import { Button } from "@material-ui/core";
 import { makeStyles } from "@material-ui/core/styles";
 
 const useStyles = makeStyles({
-  root: {
+  green: {
     backgroundColor: "green",
     color: "white",
+  },
+  blue: {
+    backgroundColor: "blue",
+    color: "white",
+  },
+  yellow: {
+    backgroundColor: "yellow",
+    color: "black",
+  },
+  margin: {
+    marginRight: "1rem",
   },
 });
 
 function App() {
   const classes = useStyles();
   return (
-    <Button variant="contained" className={classes.root}>
-      Hello World
-    </Button>
+    <div>
+      <Button
+        variant="contained"
+        className={`${classes.green} ${classes.margin}`}
+      >
+        Hello World
+      </Button>
+      <Button
+        variant="contained"
+        className={`${classes.blue} ${classes.margin}`}
+      >
+        Hello World
+      </Button>
+      <Button
+        variant="contained"
+        className={`${classes.yellow} ${classes.margin}`}
+      >
+        Hello World
+      </Button>
+    </div>
   );
 }
 
