@@ -1,5 +1,13 @@
-import React from "react";
-import { Button } from "@material-ui/core";
+import React, { Fragment } from "react";
+import {
+  Box,
+  Button,
+  Card,
+  CardHeader,
+  CardContent,
+  CardActions,
+  Container,
+} from "@material-ui/core";
 import { makeStyles } from "@material-ui/core/styles";
 
 const useStyles = makeStyles({
@@ -23,7 +31,7 @@ const useStyles = makeStyles({
 function App() {
   const classes = useStyles();
   return (
-    <div>
+    <Container>
       <Button
         variant="contained"
         className={`${classes.green} ${classes.margin}`}
@@ -42,7 +50,17 @@ function App() {
       >
         Hello World
       </Button>
-    </div>
+      <Box width={300}>
+        <Card>
+          <CardHeader title="CardHeader" />
+          <CardContent>
+            CardContent: can you set card width without a Box wrapped around it?
+            hmm
+          </CardContent>
+          <CardActions>CardActions What does this do?</CardActions>
+        </Card>
+      </Box>
+    </Container>
   );
 }
 
