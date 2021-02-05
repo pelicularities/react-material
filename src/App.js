@@ -5,7 +5,9 @@ import {
   Card,
   CardHeader,
   CardContent,
+  CardActionArea,
   CardActions,
+  CardMedia,
   Container,
   Typography,
 } from "@material-ui/core";
@@ -32,6 +34,13 @@ const useStyles = makeStyles({
   },
   maxWidth: {
     maxWidth: 300,
+  },
+  bootstrap: {
+    width: "18rem",
+    marginTop: "1rem",
+  },
+  media: {
+    height: 200,
   },
 });
 
@@ -68,7 +77,27 @@ function App() {
             How do you use this Typography tag
           </Typography>
         </CardContent>
-        <CardActions>CardActions What does this do?</CardActions>
+      </Card>
+      <Card className={classes.bootstrap}>
+        <CardMedia
+          image="/placeholder.jpeg"
+          title="placeholder image"
+          className={classes.media}
+        />
+        <CardHeader title="Card title" />
+        <CardContent>
+          Some quick example text to build on the card title and make up the
+          bulk of the card's content.
+        </CardContent>
+
+        <CardActions>
+          <Button variant="contained" color="primary">
+            Somewhere
+          </Button>
+          <Button variant="contained" color="secondary">
+            Elsewhere
+          </Button>
+        </CardActions>
       </Card>
     </Container>
   );
